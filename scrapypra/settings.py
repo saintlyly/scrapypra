@@ -11,6 +11,9 @@ BOT_NAME = 'scrapypra'
 
 SPIDER_MODULES = ['scrapypra.spiders']
 NEWSPIDER_MODULE = 'scrapypra.spiders'
+# 下载设置
+ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
+IMAGES_STORE = 'jsimgs'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
