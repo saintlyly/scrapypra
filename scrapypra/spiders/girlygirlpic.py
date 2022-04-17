@@ -17,7 +17,7 @@ class GirlygirlpicSpider(scrapy.Spider):
         payload = {
             "action": "load_infinite_content",
             #paged分页
-            "next_params": "paged=2&posts_per_page=10&post_status=publish&category__in=0",
+            "next_params": "paged=4&posts_per_page=10&post_status=publish&category__in=0",
             "layout_type": "v3",
             "template_type": "",
             "page_id": "pid407",
