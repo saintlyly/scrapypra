@@ -85,16 +85,25 @@ class GirlygirlpicSpider(scrapy.Spider):
                 'x-requested-with': 'XMLHttpRequest'
             }
             yield Request(url,self.parse,headers=headers,method="POST",body=json.dumps(payload))
-            
+    
+    #下载图片        
     def parse(self, response):
         #print(response.body)
+          
         #图片地址
-        img=response.xpath('//div[@class="figure-link-w"]/a/@href').getall()
-        # print(img)
+        img_src=response.xpath('//div[@class="figure-link-w"]/a/figure/picture/source/img/@data-src').getall()
+          #图片名称
+        name=response.xpath('//div[@class="figure-link-w"]/a/figure/picture/source/img/@alt').getall()
+        name2=str(name)[1:20]
+        name1=str(name)[40:60]
+        image_name=name2+name1
+
     
         yield {
-          'image_urls':img
+          'image_urls':img_src,
+          'image_name':image_name
         }
+    
     
         
     # def urlsparse(self,response):

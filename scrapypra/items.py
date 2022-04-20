@@ -9,4 +9,7 @@ import scrapy
 class ScrapypraItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    images = Field()
+    image_urls = Field()
+    image_name = Field()
+    image_paths = Field()
